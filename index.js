@@ -1,14 +1,25 @@
-import React, { Component } from 'react';
-class HomePageTakeover extends Component {
+import React, { Component, PropTypes } from 'react';
 
-  constructor(props){ //gives us acces to props, fires long before page load
-    super(props) //assigns props to this.props
-    this.state = {} /* great place to assign default state */
+class RandomTest extends Component {
+  static PropTypes = {
+    h1: PropTypes.string,
+    h2: PropTypes.string,
   }
-  
   render(){
+    let {
+      h2 = 'sup this a github edit',
+    } = this.props;
+
+    let {
+      flux, config
+    } = this.context;
+
     return (
-      <div className="blah">test</div>) 
-            } 
+      <div>
+        <h2>{h2}</h2>
+      </div>
+    );
+  }
 }
-export default HomePageTakeover;
+
+export default RandomTest;
